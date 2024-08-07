@@ -1,5 +1,8 @@
 """
-Run Yolov8 model and Bytetrack tracker on a video to get person detections, track them and visualize the results
+Run Yolov8 model and a tracker on a video to get person detections, track them and visualize the results
+
+For BoT-SORT tracker use parameter tracker=botsort.yaml
+For Bytetrack tracker use parameter tracker="bytetrack.yaml"
 """
 
 import cv2
@@ -23,7 +26,7 @@ def predict():
         if success:
             # Run YOLOv8 inference and Bytetrack tracker on the frame
             # Class 0 = person
-            results = model.track(frame, persist=True, classes=[0], verbose=False, conf=0.35)
+            results = model.track(frame, persist=True, classes=[0], verbose=False, conf=0.35, tracker="bytetrack.yaml")
 
             # Visualize the results on the frame
             annotated_frame = results[0].plot()
