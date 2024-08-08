@@ -11,3 +11,7 @@ To run the scripts using a conda environment:
 3) Install the dependencies using: **pip install ultralytics**
 
 4) Then run the script using: **python train.py**
+
+----------------------------------------------------------------------------------------------------------
+
+Install EasyOCR using: **pip install easyocr**
